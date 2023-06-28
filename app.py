@@ -6,6 +6,8 @@ app = Flask(__name__)
 # animals.html -> places.html
 # pet.html -> glam.html
 
+# hellaur pls note na sa glms.db, pinalitan ko ung name ng table to "glams" from "glam"
+# also ung site.html ginawa kong glam.html
 
 @app.route('/')
 def index():
@@ -44,22 +46,25 @@ def processing():
 def modify():
     # 1. identify whether user clicked edit or delete
        # if edit, then do this:
-    if request.form["modify"] == "edit":
+    if request.form["modify"] == "Edit":
         # retrieve record using id
         glam_id = request.form["glam_id"] 
         glam = read_glam_by_glam_id(glam_id)
         # update record with new data
         return render_template('update.html', glam=glam)
     # if delete, then do this
-    elif request.form["modify"] == "delete":
+    elif request.form["modify"] == "Delete":
         # retrieve record using id
+        glam_id = request.form["glam_id"]
         # delete the record
+        delete_glam(glam_id)
         # redirect user to glam list by glam type
-        pass
+        return render_template("places.html")
 
 @app.route('/update', methods=['post'])
 def update():
     glam_data = {
+        "glam_id": request.form['glam_id'],
         "glam_type": request.form['glam_type'],
         "name": request.form['glam_name'],
         "date_established": request.form['glam_date_established'],
