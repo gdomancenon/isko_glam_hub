@@ -1,15 +1,15 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>Register a Gallery, Library, Archive, or Museum in this Hub</h1>
+<h1>Register a Gallery, Library, Archive, or Museum to the Hub</h1>
 <form action="{{ url_for('processing') }}" method="post">
     <label for="g_type">Type of GLAM:</label>
     <select name="glam_type" id="g_type" required>
         <option disabled selected value>...</option>
-        <option value="galleries">Gallery</option>
-        <option value="libraries">Library</option>
-        <option value="archives">Archive</option>
-        <option value="museums">Museum</option>
+        <option value="Galleries">Gallery</option>
+        <option value="Libraries">Library</option>
+        <option value="Archives">Archive</option>
+        <option value="Museums">Museum</option>
     </select><br><br>
     <label for="g_name">Name of GLAM:</label>
     <input type="text" name="glam_name" id="g_name" required><br><br>
