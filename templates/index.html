@@ -1,14 +1,66 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>Isko GLAM Hub</h1>
-<p>Welcome to Isko GLAM Hub! Browse through to explore the galleries, libraries, archives, and museums in UP Diliman:</p>
-<br>
+<style>
+    body {
+        font-family: 'Yu Mincho', Arial, sans-serif;
+        background-color: #f1f1f1;
+        color: #f1f1f1;
+        margin: 0;
+        padding: 20px;
+        text-align: center;
+        background-image: url(https://t3.ftcdn.net/jpg/05/74/70/60/360_F_574706059_s4gBUvmVNHeD0XYkVra822kli7NbWsgt.jpg);
+        background-size: cover;
+    }
+
+    h1 {
+        font-size: 50px;
+        font-family: "Roboto";
+        font-weight: bold;
+        margin-bottom: 20px;
+        color: #800000;
+        background-color: #f1f1f1;
+        padding: 5px;
+        opacity: 0.7;
+    
+    }
+
+    p {
+        font-size: 18px;
+        margin-bottom: 30px;
+        text-decoration: underline;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    li {
+        font-size: 30px;
+        margin-bottom: 10px;
+    }
+
+    a {
+        color: #2d6105;
+        text-decoration: none;
+        transition: color 0.3s;
+    }
+
+    a:hover {
+        color: #228B22;
+        font-style: italic;
+    }
+</style>
+
+<h1>University of the Philippines GLAM Hub</h1>
+<p>Welcome to the Isko GLAM Hub! Browse through the links below to explore the galleries, libraries, archives, and museums in UP Diliman:</p>
+
 <ul>
     <li><a href="/places/galleries">Galleries</a></li>
     <li><a href="/places/libraries">Libraries</a></li>
     <li><a href="/places/archives">Archives</a></li>
     <li><a href="/places/museums">Museums</a></li>
 </ul>
-
 {% endblock %}
