@@ -4,7 +4,7 @@ from data import *
 app = Flask(__name__)
 # dont forget to use #comments para magkaintindi tayo
 # animals.html -> places.html
-# pet.html -> site.html
+# pet.html -> glam.html
 
 
 @app.route('/')
@@ -21,7 +21,7 @@ def places(glam_type):
 @app.route('/places/<int:glam_id>')
 def glam(glam_id):
     glam = read_glam_by_glam_id(glam_id)
-    return render_template("site.html", glam=glam)
+    return render_template("glam.html", glam=glam)
 
 @app.route('/register')
 def register():
@@ -34,11 +34,11 @@ def processing():
         "name": request.form['glam_name'],
         "date_established": request.form['glam_date_established'],
         "location": request.form['glam_location'],
-        "description": request.form['glam_description'],
+        "description": request.form['glam_desc'],
         "url": request.form['glam_url']
     }
     insert_glam(glam_data)
-    return redirect(url_for('glam', glam_type=request.form['glam_type']))
+    return redirect(url_for('places', glam_type=request.form['glam_type']))
 
 @app.route('/modify', methods=['post'])
 def modify():
