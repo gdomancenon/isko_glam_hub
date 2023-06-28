@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>{{ glam.name }}</h1>
+<img src="{{glam.url}}">
+<p>{{ glam.description }}</p>
+<ul>
+    
+    <li>Location: {{ glam.location }}</li>
+    <li>Date Established: {{ glam.date_established }}</li>
+</ul>
+<form action="{{ url_for('modify') }}" method="post">
+    <input type="hidden" name="glam_id" value="{{ glam.id }}">
+    <input class="btn btn-secondary" type="submit" name="modify" value="Edit"></input>
+    <input class="btn btn-danger" type="submit" name="modify" value="Delete"></input>
+</form>
+{% endblock %}
