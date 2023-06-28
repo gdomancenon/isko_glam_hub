@@ -4,7 +4,7 @@
 
 <ul>
     {% for glam in glams %}
-    <li><a href="/places/{{ glam_id }}">{{ glam_name }}</a></li>
+    <li><a href="/places/{{ glam.id }}">{{ glam.name }}</a></li>
     {% endfor %}
 </ul>
 {% endblock %}
