@@ -9,7 +9,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return render_template('base.html')
+    return render_template('index.html')
 
 # Add route to list of glams 
 @app.route('/places/<glam_type>')
