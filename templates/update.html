@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Register a Gallery, Library, Archive, or Museum in this Hub</h1>
+<form action="{{ url_for('update') }}" method="post">
+    <input type="hidden" name="glam_id" value="{{ glam.id }}">
+    <label for="g_type">Type of Glam:</label>
+    <select name="glam_type" id="g_type" required>
+        <option disabled selected value>...</option>
+        {% if glam_type == "galleries" %}
+        <option value="galleries" selected>galleries</option>
+        <option value="libraries">libraries</option>
+        <option value="archives">archives</option>
+        <option value="museums">museums</option>
+        {% elif glam_type == "galleries" %}
+        <option value="galleries" >galleries</option>
+        <option value="libraries"selected>libraries</option>
+        <option value="archives">archives</option>
+        <option value="museums">museums</option>
+        {% elif glam_type == "galleries" %}
+        <option value="galleries" >galleries</option>
+        <option value="libraries">libraries</option>
+        <option value="archives" selected>archives</option>
+        <option value="museums">museums</option>
+        {% elif glam_type == "galleries" %}
+        <option value="galleries" >galleries</option>
+        <option value="libraries">libraries</option>
+        <option value="archives">archives</option>
+        <option value="museums" selected>museums</option>
+        {% endif %}

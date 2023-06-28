@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>List of {{ glam_type }}</h1>
+
+<ul>
+    {% for glam in glams %}
+    <li><a href="/places/{{ glam_id }}">{{ glam_name }}</a></li>
+    {% endfor %}
+</ul>
+{% endblock %}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Isko GLAM Hub </title>
+</head>
+<body>
+    {% block content %}
+    <nav class="navbar navbar-expand-sm bg-dark-subtle bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="{{url_for('index')}}">IGH</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{{url_for('index')}}">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{url_for('register')}}">Register a GLAM</a>
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+
+    <div class="m-4">
+      <p>Welcome to Isko GLAM Hub! Browse through to explore the galleries, libraries, archives, and museums in UP Diliman:</p>
+<br>
+<ul>
+    <li><a href="/places/galleries">Galleries</a></li>
+    <li><a href="/places/libraries">Libraries</a></li>
+    <li><a href="/places/archives">Archives</a></li>
+    <li><a href="/places/museums">Museums</a></li>
+</ul>
+    {% endblock %}
+</body>
+</html>
